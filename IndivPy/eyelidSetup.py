@@ -206,7 +206,8 @@ class EyelidSetup(object):
 
     def instruc(self, imageName, parts):
         #Find image location
-        imgPath= eyelidImg.__file__.replace("\\__init__.pyc", "/%s.jpg"%imageName)
+        imgPathTemp= eyelidImg.__file__
+        imgPath= eyelidImg.__file__.replace(imgPathTemp.split("\\")[-1], "/%s.jpg"%imageName)
 
         #Create instruction window
         try: 
