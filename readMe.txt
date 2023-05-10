@@ -8,7 +8,7 @@ INSTALLATION
 
 DESCRIPTION
 ==============
-    LvnTools contains multiple tools. Mainly for rigging task
+    LvnTools contains multiple tools. Mostly for rigging
     
     01. Group Maker
     02. Connect Attribute
