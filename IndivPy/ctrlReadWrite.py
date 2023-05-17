@@ -152,7 +152,7 @@ class CtrlReadWrite(object):
                             self.uiStuffClass.loadingBar(2)    
                         lv0["LvnTools_CtrlReadWrite"]= lv1
                         json.dump(lv0, f, sort_keys=1, indent=4)                   
-                        print "-----------------------------\nLvnTools_CtrlReadWrite Saved to ---- %s\n\n-----------------"%filePath[0]
+                        print("-----------------------------\nLvnTools_CtrlReadWrite Saved to ---- %s\n\n-----------------"%filePath[0])
                         self.uiStuffClass.loadingBar(3)
             else:
                 cmds.warning("Selection included non-curve, please select ctrl only (Not the cvs)")
@@ -166,7 +166,7 @@ class CtrlReadWrite(object):
             with open(filePath[0], "r") as f:
                 fc= json.load(f)
         if fc:
-            if fc.keys()[0]=="LvnTools_CtrlReadWrite":
+            if list(fc.keys())[0]=="LvnTools_CtrlReadWrite":
                 test1= 1
                 cmds.textFieldButtonGrp(self.txtFImp, tx="%s"%filePath[0], e=1)
             if test1==[]:        
@@ -185,13 +185,13 @@ class CtrlReadWrite(object):
             with open(self.fileDir, "r") as f:
                 fc= json.load(f)  
             if fc:  
-                if fc.keys()[0]=="LvnTools_CtrlReadWrite":
-                    lv1= fc.values()[0]
+                if list(fc.keys())[0]=="LvnTools_CtrlReadWrite":
+                    lv1= list(fc.values())[0]
 
                     #Precheck
                     allCtrl, misCtrl, misShp, misCv= [],[],[],[]
                     self.uiStuffClass.loadingBar(1, len(lv1))
-                    for ctrl in lv1.keys():
+                    for ctrl in list(lv1.keys()):
                         self.uiStuffClass.loadingBar(2)
                         ctrl= self.searRepl(ctrl)
                         lv2= lv1[ctrl]
@@ -222,7 +222,7 @@ class CtrlReadWrite(object):
                                         else:
                                             ans= spans+deg
                                         #Check if cvs number the same (might change shape without changing shape name)    
-                                        if ans!=len(lv3.keys()):
+                                        if ans!=len(list(lv3.keys())):
                                             misCv.append(shp)
                     self.uiStuffClass.loadingBar(3)
                     if misCtrl==[] and misShp==[] and misCv==[]:
@@ -233,7 +233,7 @@ class CtrlReadWrite(object):
                     if conti:
                         if meth!=3:
                             self.uiStuffClass.loadingBar(1, len(lv1))
-                            for ctrl in lv1.keys():
+                            for ctrl in list(lv1.keys()):
                                 ctrl= self.searRepl(ctrl)
                                 lv2= lv1[ctrl]
                                 if cmds.objExists(ctrl):
@@ -257,10 +257,10 @@ class CtrlReadWrite(object):
                                                     ans= spans
                                                 else:
                                                     ans= spans+deg
-                                                if ans==len(lv3.keys()):
+                                                if ans==len(list(lv3.keys())):
                                                     
                                                     #Cv lv
-                                                    for cvs in lv3.keys():
+                                                    for cvs in list(lv3.keys()):
                                                         cvs= self.searRepl(cvs)
                                                         lv4= lv3[cvs]
                                                         piv= cmds.xform(ctrl, q=1, ws=1, rp=1)

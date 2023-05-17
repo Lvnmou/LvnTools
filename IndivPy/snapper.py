@@ -171,7 +171,6 @@ class Snapper(object):
             piv= cmds.xform(obj, q=1, rp=1, ws=1)
             rot= cmds.xform(obj, q=1, ro=1, ws=1) 
             rotOr= cmds.xform(obj, q=1, roo=1) 
-            print rot
         elif cmds.objectType(obj)=="mesh" or cmds.objectType(obj)=="nurbsCurve" or cmds.objectType(obj)=="nurbsSurface":   
             tempPiv= cmds.exactWorldBoundingBox(obj)
             piv= [round((tempPiv[0]+tempPiv[3])/2, 3), round((tempPiv[1]+tempPiv[4])/2, 3), round((tempPiv[2]+tempPiv[5])/2, 3)]
@@ -444,4 +443,5 @@ class Snapper(object):
              
 if __name__=='__main__':
     Snapper()
+
 

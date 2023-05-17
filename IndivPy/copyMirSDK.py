@@ -281,7 +281,7 @@ class CopyMirSDK(object):
                 cmds.keyframe(dup, e=1, index=(thing[0],thing[0]), o="over", fc=dr* thing[1][0])
                 cmds.keyframe(dup, e=1, index=(thing[0],thing[0]), o="over", vc=dn* thing[1][1])
         else:
-            for thing in enumerate(reversed(zip(tim,val))): 
+            for thing in enumerate(reversed(list(zip(tim,val)))): 
                 cmds.keyframe(dup, e=1, index=(thing[0],thing[0]), o="over", fc=dr* thing[1][0])
                 cmds.keyframe(dup, e=1, index=(thing[0],thing[0]), o="over", vc=dn* thing[1][1]) 
      
@@ -560,5 +560,6 @@ class CopyMirSDK(object):
 
 if __name__=='__main__':
     CopyMirSDK()
+
 
 

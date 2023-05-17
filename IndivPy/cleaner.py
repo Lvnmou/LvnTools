@@ -342,8 +342,8 @@ class Cleaner(object):
                 self.uiStuffClass.loadingBar(2)
             self.uiStuffClass.loadingBar(3)
             if sno:
-                dupItem= sno.keys()
-                dupNum= sno.values()
+                dupItem= list(sno.keys())
+                dupNum= list(sno.values())
                 finalPrint=[]
                 for stuff in dupItem:
                     finalPrint.append("%s - %s"%(sno[stuff], stuff))
@@ -1076,6 +1076,7 @@ class Cleaner(object):
 if __name__=='__main__':
     Cleaner() 
                         
+
 
 
 

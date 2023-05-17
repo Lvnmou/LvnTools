@@ -2,6 +2,7 @@ import sys
 import IndivPy
 import Mod
 import Logs
+import imp
 
 
 def reloadUI(*Args):
@@ -18,14 +19,15 @@ def reloadUI(*Args):
                 except:
                     test=1
     if test1:        
-        print "reload <IndivPy> -- Fail"
+        print("reload <IndivPy> -- Fail")
     if test2:        
-        print "reload <Logs> -- Fail" 
+        print("reload <Logs> -- Fail") 
     if test3: 
-        print "reload <Mod> -- Fail"   
+        print("reload <Mod> -- Fail")   
     #Reload mainUI            
     import Mod.LvnUI as LvnUI          
-    reload(LvnUI) 
+    imp.reload(LvnUI) 
     LvnUI.LvnUI()
+
 
 

@@ -191,7 +191,7 @@ class Blendshape(object):
         for x, stuff in enumerate(newNum):
             D3[x+1] =D1[stuff]
         fullD=[]
-        for k, v in zip(D3.keys(), D3.values()):
+        for k, v in zip(list(D3.keys()), list(D3.values())):
             fullD.append("%02d"%k)
             fullD.append(v+"\n")
         return D1, fullD
@@ -243,7 +243,7 @@ class Blendshape(object):
                 if allBsIn:
                     D1, fullD= self.bsCal(allBsIn)  
                 realD1=[]      
-                for item in D1.keys():
+                for item in list(D1.keys()):
                     realD1.append(int(item))            
                 val= max(realD1)
                 topo= cmds.checkBoxGrp(self.cb121, q=1, v1=1)
@@ -408,7 +408,7 @@ class Blendshape(object):
                         allBsIn= cmds.aliasAttr("fbc_BS", q=1)
                         D1, fullD= self.bsCal(allBsIn)  
                         realD1=[]      
-                        for item in D1.keys():
+                        for item in list(D1.keys()):
                             realD1.append(int(item))            
                         val= max(realD1)
                         for x, thing in enumerate(allDup):
@@ -436,10 +436,10 @@ class Blendshape(object):
                 try:
                     if inCB:
                         bsTar= inCB[0]
-                        bsIn= int(D1.keys()[D1.values().index("%s"%bsTar)])+1
+                        bsIn= int(list(D1.keys())[list(D1.values()).index("%s"%bsTar)])+1
                     elif outCB:
                         bsTar= outCB[0]
-                        bsIn= int(D1.keys()[D1.values().index("%s"%bsTar)])+1
+                        bsIn= int(list(D1.keys())[list(D1.values()).index("%s"%bsTar)])+1
                     else:
                         bsTar="--"
                         bsIn= 0    

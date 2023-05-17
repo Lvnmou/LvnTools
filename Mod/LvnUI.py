@@ -79,9 +79,10 @@ class LvnUI(object):
         cmds.menuItem(l="Kill All", c=lambda x:self.killAll())
         cmds.menuItem(l="About", c=lambda x:self.about()) 
         cmds.menuItem(l="Logs", c=lambda x:self.logs())
-        cmds.menuItem(l="Reload", c=reloadUI.reloadUI)          
-        cmds.showWindow(LvnWin)
-        cmds.dockControl("LvnDock", l="LvnTools  v1.05", a="top", s=1, con=LvnWin, fcc=lambda:self.docking1())
+        cmds.menuItem(l="Reload", c=reloadUI.reloadUI)   
+        cmds.dockControl("LvnDock", l="LvnTools  v1.06", a="top", s=1, con=LvnWin, fcc=lambda:self.docking1())
+        #cmds.showWindow(LvnWin)
+
         self.preSetting()
 
     def docking1(self):

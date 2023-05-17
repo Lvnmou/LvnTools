@@ -243,7 +243,7 @@ class BindPreMatrix(object):
                             cmds.disconnectAttr("%s.worldInverseMatrix"%conn, "%s.bindPreMatrix%s"%(skin,matInd))
                             cmds.setAttr("%s.bindPreMatrix%s"%(skin,matInd), bpm, typ="matrix")
                         except:
-                            print jnts[x+1] 
+                            print(jnts[x+1]) 
                     self.uiStuffClass.loadingBar(2)
                 self.uiStuffClass.loadingBar(3)
             else:

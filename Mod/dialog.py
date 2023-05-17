@@ -5,7 +5,7 @@ import time
 class Dialog(object):
     def successDialog(self):
         cmds.confirmDialog( t="Success", m="Function Success!    ", button=["Ok"])        
-        print ""
+        print("")
 
     def warningDialog(self, msg):
         cmds.confirmDialog(t="Warning", m=msg, button=["Return"])     
@@ -234,4 +234,5 @@ class Dialog(object):
         cmds.separator(h=5, st="none")
         cmds.scrollField(ed=0, fn="plainLabelFont", tx="\n".join(tar))
         cmds.showWindow("pd")
+
 

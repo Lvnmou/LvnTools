@@ -56,4 +56,5 @@ class UiStuff(object):
                 cmds.select(sel)            
             cmds.progressBar(self.pb2, e=1, vis=0, pr=0)
             cmds.progressBar(self.pb1, e=1, vis=1)   
-            print ""
+            print("")
+

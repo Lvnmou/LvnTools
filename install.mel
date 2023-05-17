@@ -10,14 +10,6 @@ string $command= "import sys\
 \n\nlvnPath= \""+$scriptLoc+"\"\
 \nif lvnPath not in sys.path:\
 \n    sys.path.append(lvnPath)\
-\n\
-\n#This makes maya easily crash, so only use it if want to update script\
-\n\"\"\"\
-\n#Reload Modules\
-\nfrom Mod import reloadMod as rd\
-\nrd.ReloadMod(r\""+$scriptLoc+"\")\
-\n\"\"\"\
-\n\
 \nimport Mod.reloadUI as reloadUI\
 \nreloadUI.reloadUI()";
 

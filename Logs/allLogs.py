@@ -1,13 +1,46 @@
 def allLogs(*Args):
     texts="""
-v1.05   =   10-05-2023
-v1.04   =   24-09-2019
-v1.03   =   27-06-2018
-v1.02   =   23-05-2018 
-v1.01   =   14-05-2018
+v1.06   =   2023-05-17
+v1.05   =   2023-05-10
+v1.04   =   2019-09-24
+v1.03   =   2018-06-27
+v1.02   =   2018-05-23
+v1.01   =   2018-05-14
 
 
-    
+
+
+
+
+
+    v1.06
+    ----------   
+        1) NEW
+
+        2) REMOVE
+
+        3) MOVED
+
+        4) ADD FUNCTION
+
+        5) FIX
+
+
+            *LvnTools*
+            -------------
+                All
+                ======   
+                    - Convert scripts from python2.7 > python3 (workable on maya2022 onwards)
+
+                Reload
+                =========  
+                    - (Remove) "Reload Mod" for installer
+                    (* Was obsoleted in v1.04 but forgotten to remove the files)
+                    (* Intend to work for different version of LvnTool but modules name might change so it doesnt work)
+
+
+
+
     v1.05
     ----------   
         1) NEW
